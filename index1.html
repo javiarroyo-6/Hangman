@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+    *{
+    box-sizing:border-box;
+    }
+    body {
+    margin:0;
+    font-family:'Times New Roman', Times, serif;
+    font-size:15px;
+    }
+    #myVideo {
+    position: fixed;
+    right: 0;
+    bottom:0;
+    min-width:100%;
+    min-height:100%;
+}
+.content {
+    position:fixed;
+    bottom:0;
+    background:rgba(0, 0, 0, 0.5);
+    columns: #dd0e0e;
+    width:100%;
+    padding:20px;
+}
+ #myBtn {
+    width:200px;
+    font-size:18px;
+    padding:10px;
+    border:none;
+    background:#000;
+    color:rgb(255, 255, 255);
+    cursor:pointer;
+ }
+
+ #myBtn:hover {
+    background:#ddd;
+    color:black;
+ }
+ p {
+    color:white;
+ }
+ h1 {
+    color:white;
+ }
+ h2 {
+    font-size:15px;
+    color:white;
+ }
+
+</style>
+</head>
+<body>
+<h2>Word Guessing Game!</h2>
+<video autoplay muted loop id="myVideo">
+    <source src="leo.mp4" type="video/mp4">
+</video>
+    <div class="content">
+        <h1>Word Guessing Game!</h1>
+        <div id="game">
+            <p>Press any key to start playing</p>
+        </div>
+        <h2>Topic: FC Barcelona's Leo Messi</h2>
+        <p>Leo Messi is considered by many to be the greatest soccers player to
+            ever live. How would you describe him?
+        </p>
+        <form id="wordguessinggame">
+                <input type="text" name="guess"><br>
+                <button id="Guess" name="Guess" type="button">Guess</button>
+        </form>
+    </div>
+<script>
+var alphabet = "abcdefghijklmnopqrstuvwxyz"
+var wordBank = ["Magical","Fast",,"GOAT","Impressive"];
+var lives = 3;
+messages = {
+    win:"Winner Winner Chicken Dinner",
+    lose:"Mwahaha",
+    guessed:"You have guessed this letter",
+}
+
+document.onkeyup = function(event) {
+    var playerGuess = event.key;
+    var computerGuess = wordBank [Math.floor(Math.random()* wordBank.length)];
+}
+
+
+
+
+
+
+
+
+
+
+var video = document.getElementById("myVideo");
+
+var btn = document.getElementById("myBtn");
+
+function myFunction() {
+    if (video.paused) {
+        video.play();
+        btn.innerHTML ="Pause";
+    } else {
+        video.pause();
+        btn.innerHTML = "Play";
+    }
+}
+
+
+</script>
+
+</body>   
+</html>
